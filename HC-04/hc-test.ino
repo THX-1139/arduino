@@ -17,8 +17,8 @@ void loop() {
 }
 
 int hc04(int trigPin) {
-   float duration, distance; 
-   digitalWrite(trigPin, LOW);
+  float duration, distance; 
+  digitalWrite(trigPin, LOW);
   delayMicroseconds(2);
   digitalWrite(trigPin, HIGH);
   delayMicroseconds(10);
