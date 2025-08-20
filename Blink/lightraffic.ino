@@ -1,6 +1,7 @@
-int rouge = 4;
-int jaune = 5;
-int vert = 4;
+#define rouge = 4;
+#define jaune = 5;
+#define vert = 4;
+
 void setup() { 
   pinMode(rouge, OUTPUT); 
   pinMode(jaune, OUTPUT);
