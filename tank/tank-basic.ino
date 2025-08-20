@@ -8,7 +8,7 @@
 int M1_Speed = 80; // la vitesse du moteur 1
 int M2_Speed = 80; // la vitesse du moteur 2
 
-char command = 0;
+int command = 0;
 
 void setup() {
   pinMode(in1,OUTPUT);
@@ -17,20 +17,30 @@ void setup() {
   pinMode(in4,OUTPUT);
   pinMode(enA,OUTPUT);
   pinMode(enB,OUTPUT);
+
+  Serial.begin(9600);
+  stop();
 }
 
 void loop() {
-  if (command == 1){
-    forward();
-  } 
-  else if (command == 2){
-    backward();
-  }
-  else if (command == 3){
-    right();
-  }
-  else if (command == 4) {
-    right();
+  if (Serial.available()) {
+    command = Serial.read(); 
+    if (val == '1') {
+      forward();
+    }
+    else if ( command == '2') { // При символе "0" выключаем светодиод
+      backward();
+    }
+    else if ( command == '3'){
+      right();
+    }
+    else if ( command == '4'){
+      left();
+    }
+    else if (command == '0'){
+      stop();
+    }
+
   }
 }
 
