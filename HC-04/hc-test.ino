@@ -1,5 +1,5 @@
-const int trigPin = 9;
-const int echoPin = 10;
+#define trigPin = 9;
+#define echoPin = 10;
 
 float distance;
 
